@@ -23,7 +23,7 @@ The response for this request will be in json format:
 }
 However, if the service that returns the coordinates is unavailable you will receive an error http 500.
 
-The second services take two headers ("user" and "password"), and check the files users.csv in order to find
+The second services take two headers("user" and "password"), and check the files users.csv in order to find
 out a coincidence. The associated verb is POST
 
 An example of request could be:
@@ -43,4 +43,5 @@ Also, if any of the credentials are blank, the response will be:
 
 
 --------------------------------------------------------------
-
+Postman documentation available in:
+https://documenter.getpostman.com/view/17462417/UVXnHudj

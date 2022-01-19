@@ -38,7 +38,8 @@ namespace Exercise.Controllers
         [HttpGet("{province}")]
         public IActionResult Get(string province)
         {
-            _logger.LogInformation(string.Concat("Requesting coordinates of province ",province));
+            if (_logger != null)
+                _logger.LogInformation(string.Concat("Requesting coordinates of province ",province));
             _searcher = new ConstructorSearcher(new WebSearcher(province));
             return _searcher.Search();
         }
@@ -47,7 +48,8 @@ namespace Exercise.Controllers
         [HttpPost]
         public IActionResult Post([FromHeader] string user,[FromHeader]string password)
         {
-            _logger.LogInformation(string.Concat("Requesting access for user ", user));
+            if (_logger != null)
+                _logger.LogInformation(string.Concat("Requesting access for user ", user));
             _searcher = new ConstructorSearcher(new FileSearcher(user, password));
             return _searcher.Search();
         }
